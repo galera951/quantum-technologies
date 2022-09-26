@@ -21,6 +21,16 @@
 
 
 module main(
-    input out_1
+    input in, clk,
+    output reg out
     );
+    
+    always @(posedge clk) begin
+        if (in) begin
+            out <= 1'b1;
+        end else begin
+            out <= 1'b0;
+        end
+    end
+
 endmodule
